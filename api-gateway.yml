@@ -4,15 +4,17 @@ server:
 spring:
   cloud:
     gateway:
-      discovery:
-        locator:
-          enabled: true
-          lower-case-service-id: true
-      routes:
-        - id: user-service
-          uri: "lb://user-service"
-          predicates:
-            - Path=/api/users/**
+      server:
+        webflux:
+          discovery:
+            locator:
+              enabled: true
+              lower-case-service-id: true
+          routes:
+            - id: user-service
+              uri: lb://user-service
+              predicates:
+                - Path=/api/users/**
 
 management:
   endpoints:
@@ -21,6 +23,6 @@ management:
         include: "*"
   endpoint:
     gateway:
-      enabled: true
+      access: true
     health:
       show-details: always
