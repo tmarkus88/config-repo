@@ -23,6 +23,6 @@ management:
         include: "*"
   endpoint:
     gateway:
-      enabled: true
+      access: unrestricted
     health:
       show-details: always
