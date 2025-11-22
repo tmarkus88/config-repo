@@ -3,10 +3,10 @@ server:
 
 spring:
   datasource:
-    url: jdbc:h2:mem:users
-    driver-class-name: org.h2.Driver
-    username: sa
-    password:
+    url: jdbc:postgresql://localhost:5432/TestDB
+    driver-class-name: org.postgresql.Driver
+    username: postgres
+    password: root_password
   jpa:
     hibernate:
       ddl-auto: update
